@@ -1,0 +1,6 @@
+[submodule "deps/libstatgrab"]
+	path = deps/libstatgrab
+	url = git://github.com/tdb/libstatgrab.git
+[submodule "deps/luasocket"]
+	path = deps/luasocket
+	url = git://github.com/LuaDist/luasocket.git
