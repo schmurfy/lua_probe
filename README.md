@@ -9,7 +9,6 @@ I finally settled my choice on lua and more specifically luajit and here it is.
 - Provide a lightweight metrics provider (cpu, memory, ...)
 - Provide a self contained application (I wish there was a bundler equivalent for lua, let me know if you know one)
 
-
 # Current state
 
 - libstatgrab is used to collect the values via ffi
@@ -18,9 +17,11 @@ I finally settled my choice on lua and more specifically luajit and here it is.
 - the application can already send some statistics on a fixed interval
 
 
-# Supported Platforms
+# Tested Platforms
 
-- Linux
+- Linux 2.6
+- FreeBSD 8
+- OpenBSD 5.0
 
 
 # TODO
@@ -28,3 +29,34 @@ I finally settled my choice on lua and more specifically luajit and here it is.
 - Add support for collectd
 - Allow receiving metrics from local applications and retransmit them
 - configuration
+
+
+# Install
+
+```bash
+git clone git://github.com/schmurfy/lua_probe.git
+cd lua_probe
+```
+
+Here you may need to edit the build.sh script to point it to your luajit prefix.
+You will also need:
+- CMake 2.8+.4+
+- autoconf & automake
+- luajit installed (of course)
+
+```bash
+git submodule update --init
+./build.sh
+./run.sh
+```
+
+luasocket is installed inside the lua_probe folder (deps/_install) and 
+libstatgrab shared library is copied to statgrab/ext.
+
+Once you have compiled everything and the run.sh script is working you can remove some folders:
+(I plan to use on soekris hardware were space is a concern)
+
+- deps/luasocket/
+- deps/libstatgrab/
+- .git/
+
