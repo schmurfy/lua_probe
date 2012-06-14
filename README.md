@@ -31,22 +31,20 @@ I finally settled my choice on lua and more specifically luajit and here it is.
 - configuration
 
 
+# Dependencies
+
+- CMake 2.8+.4+
+- autoconf & automake
+- luajit 2.0.0.beta10+
+
+
 # Install
 
 ```bash
 git clone git://github.com/schmurfy/lua_probe.git
 cd lua_probe
-```
-
-Here you may need to edit the build.sh script to point it to your luajit prefix.
-You will also need:
-- CMake 2.8+.4+
-- autoconf & automake
-- luajit installed (of course)
-
-```bash
 git submodule update --init
-./build.sh
+./build.sh <luajit_install_prefix>
 ./run.sh
 ```
 

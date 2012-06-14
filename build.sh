@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# user config
-LUAJIT_PREFIX="/usr/local/lua"
-# end of user config
+if [ $# != 1 ]; then
+  echo "Usage $0 <luajit_prefix"
+  exit 1
+fi
 
-
+LUAJIT_PREFIX=$1
 BASEDIR="$(dirname $0)/../.."
 
 CP=$(pwd)
