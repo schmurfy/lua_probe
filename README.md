@@ -24,13 +24,6 @@ I finally settled my choice on lua and more specifically luajit and here it is.
 - OpenBSD 5.0
 
 
-# TODO
-
-- Add support for collectd
-- Allow receiving metrics from local applications and retransmit them
-- configuration
-
-
 # Dependencies
 
 - CMake 2.8+.4+
@@ -58,3 +51,9 @@ Once you have compiled everything and the run.sh script is working you can remov
 - deps/libstatgrab/
 - .git/
 
+
+# TODO
+
+- Add support for collectd
+- Allow receiving metrics from local applications and retransmit them
+- configuration
