@@ -14,7 +14,7 @@ cd deps/libstatgrab/
 ./configure
 cd src && make
 mkdir -p ../../../statgrab/ext/
-cp -f libstatgrab/.libs/libstatgrab.so ../../../statgrab/ext/
+cp -f libstatgrab/.libs/libstatgrab.so.6.2.3 ../../../statgrab/ext/libstatgrab.so
 
 cd $CP
 
