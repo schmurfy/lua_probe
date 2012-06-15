@@ -203,14 +203,4 @@ function instance_methods:sendto(payload, dest_addr, dest_port, payload_len)
 end
 
 
-
--- return exports;
-
-
-local s = exports.new()
-print(exports.gettime());
-while 1 do
-  print("Sending packet")
-  s:sendto("Hello !\n", "127.0.0.1", 4000)
-  exports.sleep(1)
-end
+return exports
