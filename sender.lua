@@ -43,7 +43,12 @@ while 1 do
   -- collect and send them
   local cpu_stats = stats.cpu:get_cpu_stats()
   
-  send_statgrab_stat(client, "cpu", "get_cpu_stats", "ggggggg", {"user", "kernel", "idle", "iowait", "swap", "nice", "total"} )
+  send_statgrab_stat(client, "cpu", "get_cpu_percents",       "gggggg", {"user", "kernel", "idle", 'iowait', "swap", "nice"})
+  send_statgrab_stat(client, "cpu", "get_load_stats",         "ggg",    {"min1", "min5", "min15"})
+  send_statgrab_stat(client, "host", "get_host_info",         "g",      {"uptime"})
+  send_statgrab_stat(client, "memory", "get_mem_stats",       "gggg",   {"total", "free", "used", "cache"})
+  send_statgrab_stat(client, "memory", "get_swap_stats",      "ggg",    {"total", "used", "free"})
+  send_statgrab_stat(client, "process", "get_process_count",  "ggggg",  {"total", "running", "sleeping", "stopped", "zombie"})
   
   -- and wait the remaining time
   delay = interval - (socket.gettime() - started_at)
