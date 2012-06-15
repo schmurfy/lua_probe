@@ -15,7 +15,8 @@ local stats = statgrab.new()
 
 local metric_types = {
   [byte("c")] = "counter",
-  [byte("d")] = "derive"
+  [byte("d")] = "derive",
+  [byte("&")] = "delta"
 }
 
 
