@@ -48,6 +48,6 @@ while 1 do
   -- and wait the remaining time
   delay = interval - (socket.gettime() - started_at)
   print("Waiting for " .. delay .. " seconds")
-  socket.select(nil, nil, delay )
+  socket.sleep(delay)
 end
 
